@@ -17,7 +17,8 @@ public class Notification {
     private String channel;
     private String status;
     private int attempts;
-    @Column(columnDefinition = "jsonb")
+    @Column(columnDefinition = "jsonb", nullable = true)
+    @org.hibernate.annotations.JdbcTypeCode(org.hibernate.type.SqlTypes.JSON)
     private String payload;
     @Column(name = "created_at")
     private LocalDateTime createdAt;
