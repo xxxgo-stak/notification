@@ -18,7 +18,6 @@ public class EmailSender implements NotificationSender {
     public void send(Notification notification) {
         String body = notification.getTemplate().getBody();
 
-        // Substitui placeholders com valores do payload
         if (notification.getPayload() != null) {
             try {
                 com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
