@@ -5,6 +5,7 @@ import dev.luiz.notifications.dtos.NotificationRequest;
 import dev.luiz.notifications.dtos.NotificationResponse;
 import dev.luiz.notifications.dtos.StatsResponse;
 import dev.luiz.notifications.service.NotificationService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,7 @@ public class NotificationController {
     }
 
     @PostMapping
-    public ResponseEntity<NotificationResponse> create(@RequestBody NotificationRequest request) {
+    public ResponseEntity<NotificationResponse> create(@Valid @RequestBody NotificationRequest request) {
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(notificationService.create(request));
     }
 

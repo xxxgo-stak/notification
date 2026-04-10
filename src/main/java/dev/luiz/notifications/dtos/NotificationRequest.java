@@ -1,4 +1,11 @@
 package dev.luiz.notifications.dtos;
 
-public record NotificationRequest(Long templateId, String recipient, String channel, String payload) {
-}
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+public record NotificationRequest(
+        @NotNull(message = "Template ID é obrigatório") Long templateId,
+        @NotBlank(message = "Destinatário é obrigatório") String recipient,
+        @NotBlank(message = "Canal é obrigatório") String channel,
+        String payload
+) {}

@@ -14,10 +14,10 @@ spring:
     password: ${RABBITMQ_PASS:guest}
 
   mail:
-    host: sandbox.smtp.mailtrap.io
-    port: 2525
-    username: "5519ea0572eb95"
-    password: "e3305e8aeb8ac6"
+    host: ${MAIL_HOST:sandbox.smtp.mailtrap.io}
+    port: ${MAIL_PORT:2525}
+    username: ${MAIL_USER:5519ea0572eb95}
+    password: ${MAIL_PASS:e3305e8aeb8ac6}
     properties:
       mail:
         smtp:

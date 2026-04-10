@@ -3,6 +3,7 @@ package dev.luiz.notifications.controller;
 import dev.luiz.notifications.dtos.TemplateRequest;
 import dev.luiz.notifications.dtos.TemplateResponse;
 import dev.luiz.notifications.service.TemplateService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class TemplateController {
     }
 
     @PostMapping
-    public ResponseEntity<TemplateResponse> create(@RequestBody TemplateRequest request) {
+    public ResponseEntity<TemplateResponse> create(@Valid @RequestBody TemplateRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(templateService.create(request));
     }
 

@@ -1,5 +1,10 @@
 package dev.luiz.notifications.dtos;
 
-public record TemplateRequest(String name, String subject, String body, String channel) {}
+import jakarta.validation.constraints.NotBlank;
 
-
+public record TemplateRequest(
+        @NotBlank(message = "Nome é obrigatório") String name,
+        @NotBlank(message = "Assunto é obrigatório") String subject,
+        @NotBlank(message = "Corpo é obrigatório") String body,
+        @NotBlank(message = "Canal é obrigatório") String channel
+) {}
