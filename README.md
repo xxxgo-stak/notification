@@ -1,4 +1,4 @@
-# Sistema de Notificações Multicanal
+ # Sistema de Notificações Multicanal
 
 API REST para envio de notificações por múltiplos canais (email e webhook) com processamento assíncrono via filas de mensagens.
 
@@ -194,3 +194,9 @@ dev.luiz.notifications
 ├── sender              — Strategy Pattern (canais de envio)
 └── service             — Lógica de negócio
 ```
+## Melhorias futuras
+
+- Autenticação e autorização com Spring Security (JWT)
+- Rate limiting nos endpoints
+- Canal SMS com Twilio
+- Dashboard frontend para monitoramento
